@@ -12,6 +12,7 @@ class VideoBackgroud extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Positioned.fill que ocupa todo el espacio disponible dentro de su contenedor padre.
     return Positioned.fill(
         child: DecoratedBox(
             decoration: BoxDecoration(

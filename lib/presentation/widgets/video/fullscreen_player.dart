@@ -26,7 +26,7 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
   @override
   void dispose() {
     controller.dispose();
-    super.dispose();
+    super.dispose(); // Libera los recursos cuando el widget se elimine
   }
 
   @override
@@ -52,7 +52,9 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
           },
           // reproducir el video AspectRatio
           child: AspectRatio(
+            // es útil para mantener una relación de aspecto específica en sus hijos
             aspectRatio: controller.value.aspectRatio,
+            //Stack permite colocar widgets unos sobre otros.
             child: Stack(children: [
               VideoPlayer(controller),
               //Gradiente
@@ -73,7 +75,6 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
 class _VideoCaption extends StatelessWidget {
   final String caption;
   const _VideoCaption({
-    super.key,
     required this.caption,
   });
 
